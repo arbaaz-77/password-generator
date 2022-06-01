@@ -41,6 +41,9 @@ generateEl.addEventListener("click", () => {
   const hasNumber = numbersEl.checked;
   const hasSymbol = symbolsEl.checked;
 
+  if (length > 20) {
+    return;
+  }
   tipEl.innerText = "Copy";
   resultEl.innerText = generatePassword(
     length,
