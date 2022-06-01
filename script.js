@@ -7,6 +7,7 @@ const symbolsEl = document.getElementById("symbols");
 const generateEl = document.getElementById("generate");
 const clipboardEl = document.getElementById("clipboard");
 const tipEl = document.getElementById("tooltip-default");
+const errorEl = document.getElementById("error");
 
 // Generator Functions
 const getRandomLower = () => {
@@ -42,6 +43,10 @@ generateEl.addEventListener("click", () => {
   const hasSymbol = symbolsEl.checked;
 
   if (length > 20) {
+    errorEl.innerText = "Please enter a number between 1 and 20";
+    setTimeout(() => {
+      errorEl.innerText = "";
+    }, 2000);
     return;
   }
   tipEl.innerText = "Copy";
